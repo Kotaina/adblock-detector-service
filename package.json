@@ -18,12 +18,35 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kotaina/adblock-detector-service.git"
+  },
+  "homepage": "https://github.com/Kotaina/adblock-detector-service#readme",
+  "bugs": {
+    "url": "https://github.com/Kotaina/adblock-detector-service/issues"
+  },
   "keywords": [
     "adblock",
-    "detector",
+    "adblock-detector",
+    "adblock detection",
+    "detect adblock",
     "ads",
+    "ads detection",
+    "ad blocker",
+    "anti adblock",
+    "adblock js",
+    "javascript",
     "frontend",
-    "bait"
+    "browser",
+    "browser detection",
+    "script detection",
+    "prebid",
+    "adsense",
+    "analytics",
+    "tracking",
+    "privacy",
+    "bait detection"
   ],
   "license": "MIT"
 }
