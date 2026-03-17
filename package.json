@@ -1,6 +1,6 @@
 {
   "name": "adblock-detector-service",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "description": "Tiny frontend adblock detector based on third-party bait script routes",
   "type": "module",
   "main": "./dist/index.js",
