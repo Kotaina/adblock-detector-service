@@ -2,7 +2,43 @@
 
 Lightweight frontend adblock detector based on real ad and bait script requests.
 
-This library detects ad blockers by attempting to load known ad-related resources and analyzing whether they are blocked by the browser.
+It detects ad blockers by attempting to load known ad-related resources and evaluating whether they are blocked by the browser.
+
+The implementation also relies on project-controlled third-party bait domains to improve detection stability across different browsers.
+
+## Browser behavior
+
+Designed to work with both classic adblock extensions and built-in browser protections.
+
+Works well with:
+- Chrome-based browsers using adblock extensions
+- Brave with Brave Shields enabled
+- Firefox with built-in tracking and content blocking enabled
+
+To increase reliability, different domain sets are used depending on browser behavior.
+
+## How it works
+
+The detector dynamically injects script tags pointing to:
+1. 	Well-known ad provider domains (Google Ads, Facebook, etc.)
+2. 	Custom bait endpoints hosted on a dedicated third-party domain controlled by this project
+
+If a request fails (onerror), it is treated as blocked.
+
+Detection result is based on the ratio of blocked requests.
+
+*	Brave and Firefox use bait domains by default
+*	Other browsers use real ad domains
+
+## Why this library
+
+Many existing adblock detectors rely on outdated techniques or are easily bypassed.
+
+This implementation:
+*	uses real network requests instead of heuristics
+*	works without fetch/CORS limitations
+*	does not depend on DOM bait elements
+*	is minimal and framework-agnostic
 
 ## Installation
 
@@ -79,26 +115,3 @@ type IReport = {
   isAdBlockDetected: true
 }
 ```
-## How it works
-
-The detector dynamically injects script tags pointing to:
-1. 	Well-known ad provider domains (Google Ads, Facebook, etc.)
-2. 	Bait endpoints designed to mimic ad-related routes
-
-If a request fails (onerror), it is treated as blocked.
-
-Detection result is based on the ratio of blocked requests.
-
-Browser behavior
-*	Brave and Firefox use bait domains by default
-*	Other browsers use real ad domains
-
-## Why this library
-
-Many existing adblock detectors rely on outdated techniques or are easily bypassed.
-
-This implementation:
-*	uses real network requests instead of heuristics
-*	works without fetch/CORS limitations
-*	does not depend on DOM bait elements
-*	is minimal and framework-agnostic
