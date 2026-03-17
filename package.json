@@ -1,0 +1,29 @@
+{
+  "name": "adblock-detector-service",
+  "version": "0.1.0",
+  "description": "Tiny frontend adblock detector based on third-party bait script routes",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "adblock",
+    "detector",
+    "ads",
+    "frontend",
+    "bait"
+  ],
+  "license": "MIT"
+}
